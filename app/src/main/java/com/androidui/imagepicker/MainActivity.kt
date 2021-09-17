@@ -1,17 +1,11 @@
 package com.androidui.imagepicker
 
 
-import android.app.Activity
 import android.os.Bundle
-import android.os.Environment
 import android.widget.Button
 import android.widget.ImageView
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import java.io.File
 import kotlinx.android.synthetic.main.bottom_sheet_modal.view.*
 
 
