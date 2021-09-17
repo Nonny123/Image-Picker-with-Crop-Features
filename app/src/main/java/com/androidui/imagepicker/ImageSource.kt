@@ -52,24 +52,8 @@ class ImageSource(private val activity: AppCompatActivity, view: ImageView){
             .cameraOnly()
             .crop(200f, 200f)
             .compress(1024)	//Final image size will be less than 1 MB
-            //  Path: /storage/sdcard0/Android/data/package/files
-            .saveDir(activity.getExternalFilesDir(null)!!)
             //  Path: /storage/sdcard0/Android/data/package/files/DCIM
-            .saveDir(activity.getExternalFilesDir(Environment.DIRECTORY_DCIM)!!)
-            //  Path: /storage/sdcard0/Android/data/package/files/Download
-            .saveDir(activity.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)!!)
-            //  Path: /storage/sdcard0/Android/data/package/files/Pictures
-            .saveDir(activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!)
-            //  Path: /storage/sdcard0/Android/data/package/files/Pictures/ImagePicker
-            .saveDir(File(activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!, "ImagePicker"))
-            //  Path: /storage/sdcard0/Android/data/package/files/ImagePicker
-            .saveDir(activity.getExternalFilesDir("ImagePicker")!!)
-            //  Path: /storage/sdcard0/Android/data/package/cache/ImagePicker
-            .saveDir(File(activity.externalCacheDir, "ImagePicker"))
-            //  Path: /data/data/package/cache/ImagePicker
-            .saveDir(File(activity.cacheDir, "ImagePicker"))
-            //  Path: /data/data/package/files/ImagePicker
-            .saveDir(File(activity.filesDir, "ImagePicker"))
+            .saveDir(activity.getExternalFilesDir(Environment.DIRECTORY_DCIM)!!) // save to the app's DCIM folder
             .maxResultSize(200, 200) // Image resolution will be less than 512 x 512
             .createIntent { intent ->
                 startForCameraImageResult.launch(intent)
